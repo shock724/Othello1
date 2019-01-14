@@ -1,14 +1,14 @@
 //
-//  MyFirstAppUITests.swift
-//  MyFirstAppUITests
+//  OthelloUITests.swift
+//  OthelloUITests
 //
-//  Created by route02 on 2018/10/10.
-//  Copyright © 2018年 route02. All rights reserved.
+//  Created by route02 on 2019/01/12.
+//  Copyright © 2019年 Shock. All rights reserved.
 //
 
 import XCTest
 
-class MyFirstAppUITests: XCTestCase {
+class OthelloUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

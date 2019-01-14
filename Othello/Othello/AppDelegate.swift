@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  MyFirstApp
+//  Othello
 //
-//  Created by route02 on 2018/10/10.
-//  Copyright © 2018年 route02. All rights reserved.
+//  Created by route02 on 2019/01/12.
+//  Copyright © 2019年 Shock. All rights reserved.
 //
 
 import UIKit
