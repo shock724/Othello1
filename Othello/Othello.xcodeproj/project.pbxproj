@@ -14,6 +14,9 @@
 		7A7CDF6121EA1A14005E1893 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7CDF5F21EA1A14005E1893 /* LaunchScreen.storyboard */; };
 		7A7CDF6C21EA1A14005E1893 /* OthelloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7CDF6B21EA1A14005E1893 /* OthelloTests.swift */; };
 		7A7CDF7721EA1A14005E1893 /* OthelloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7CDF7621EA1A14005E1893 /* OthelloUITests.swift */; };
+		7A7CDF8521EF4595005E1893 /* 盤面.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7CDF8421EF4595005E1893 /* 盤面.png */; };
+		7A7CDF8721EF47EE005E1893 /* 白石.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7CDF8621EF47EE005E1893 /* 白石.png */; };
+		7A7CDF8921EF480A005E1893 /* 黒石.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7CDF8821EF4809005E1893 /* 黒石.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		7A7CDF7221EA1A14005E1893 /* OthelloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OthelloUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7CDF7621EA1A14005E1893 /* OthelloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthelloUITests.swift; sourceTree = "<group>"; };
 		7A7CDF7821EA1A14005E1893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A7CDF8421EF4595005E1893 /* 盤面.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "盤面.png"; sourceTree = "<group>"; };
+		7A7CDF8621EF47EE005E1893 /* 白石.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "白石.png"; sourceTree = "<group>"; };
+		7A7CDF8821EF4809005E1893 /* 黒石.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黒石.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,9 @@
 				7A7CDF5621EA1A11005E1893 /* AppDelegate.swift */,
 				7A7CDF5821EA1A11005E1893 /* ViewController.swift */,
 				7A7CDF5A21EA1A11005E1893 /* Main.storyboard */,
+				7A7CDF8421EF4595005E1893 /* 盤面.png */,
+				7A7CDF8621EF47EE005E1893 /* 白石.png */,
+				7A7CDF8821EF4809005E1893 /* 黒石.png */,
 				7A7CDF5D21EA1A14005E1893 /* Assets.xcassets */,
 				7A7CDF5F21EA1A14005E1893 /* LaunchScreen.storyboard */,
 				7A7CDF6221EA1A14005E1893 /* Info.plist */,
@@ -231,7 +240,10 @@
 			files = (
 				7A7CDF6121EA1A14005E1893 /* LaunchScreen.storyboard in Resources */,
 				7A7CDF5E21EA1A14005E1893 /* Assets.xcassets in Resources */,
+				7A7CDF8721EF47EE005E1893 /* 白石.png in Resources */,
 				7A7CDF5C21EA1A11005E1893 /* Main.storyboard in Resources */,
+				7A7CDF8521EF4595005E1893 /* 盤面.png in Resources */,
+				7A7CDF8921EF480A005E1893 /* 黒石.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
