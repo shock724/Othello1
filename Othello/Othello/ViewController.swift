@@ -27,7 +27,6 @@ class ViewController: UIViewController {
             if turn == 0{
                 sender.setImage(black, for: UIControl.State.normal)
                 if index! != 7 {
-                    
                     var count : Int = 1
                     while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 7){
                         count += 1
