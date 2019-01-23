@@ -50,6 +50,8 @@ class ViewController: UIViewController {
         }
     }
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -59,6 +61,8 @@ class ViewController: UIViewController {
         label2.layer.borderWidth = 1.0
         startWhite.setImage(white, for: UIControl.State.normal)
         startWhite2.setImage(white, for: UIControl.State.normal)
+        startBlack.setImage(black, for: UIControl.State.normal)
+        startBlack2.setImage(black, for: UIControl.State.normal)
         
     }
 
