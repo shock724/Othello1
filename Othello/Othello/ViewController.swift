@@ -32,17 +32,33 @@ class ViewController: UIViewController {
                         count += 1
                     }
                     
-                    if buttonArray[index! + count].image(for: UIControl.State.normal) == black{
-                        for i in 1 ... count{
-                            buttonArray[index! + i].setImage(black, for: UIControl.State.normal)
+                        if buttonArray[index! + count].image(for: UIControl.State.normal) == black{
+                            for i in 1 ... count{
+                                buttonArray[index! + i].setImage(black, for: UIControl.State.normal)
+                            }
                         }
-                    }
+                    
                 }
                 turn += 1
             }
                 
+                
+                
             else if turn == 1{
                 sender.setImage(white, for: UIControl.State.normal)
+                if index! != 7 {
+                    var count : Int = 1
+                    while(buttonArray[index! + count].image(for: UIControl.State.normal) == black && index! + count != 7){
+                        count += 1
+                    }
+                    
+                    if buttonArray[index! + count].image(for: UIControl.State.normal) == white{
+                        for i in 1 ... count{
+                            buttonArray[index! + i].setImage(white, for: UIControl.State.normal)
+                        }
+                    }
+                    
+                }
                 turn = 0
             }
             
