@@ -24,21 +24,48 @@ class ViewController: UIViewController {
         print(index)
         
         if sender.image(for: UIControl.State.normal) == nil{
+            
             if turn == 0{
                 sender.setImage(black, for: UIControl.State.normal)
-                if index! != 7 {
+                if index! >= 0 && index! <= 6 && index! != 7 {
                     var count : Int = 1
                     while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 7){
                         count += 1
                     }
                     
-                        if buttonArray[index! + count].image(for: UIControl.State.normal) == black{
-                            for i in 1 ... count{
-                                buttonArray[index! + i].setImage(black, for: UIControl.State.normal)
-                            }
+                    if buttonArray[index! + count].image(for: UIControl.State.normal) == black{
+                        for i in 1 ... count{
+                            buttonArray[index! + i].setImage(black, for: UIControl.State.normal)
                         }
-                    
+                    }
                 }
+                
+                if index! >= 8 && index! <= 14 && index! != 15 {
+                    var count : Int = 8
+                    while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 15){
+                        count += 1
+                    }
+                    if buttonArray[index! + count].image(for: UIControl.State.normal) == black{
+                        for i in 1 ... count{
+                            buttonArray[index! + i].setImage(black, for: UIControl.State.normal)
+                        }
+                    }
+                }
+                    
+                if index! >= 16 && index! <= 22 && index! != 23 {
+                    var count : Int = 16
+                    while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 23){
+                        count += 1
+                    }
+                    if buttonArray[index! + count].image(for: UIControl.State.normal) == black{
+                        for i in 1 ... count{
+                            buttonArray[index! + i].setImage(black, for: UIControl.State.normal)
+                        }
+                    }
+                }
+                    
+                
+                
                 turn += 1
             }
                 
