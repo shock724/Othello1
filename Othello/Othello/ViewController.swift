@@ -63,7 +63,19 @@ class ViewController: UIViewController {
                         }
                     }
                 }
-                    
+                
+                if index! >= 24 && index! <= 30 && index! != 31 {
+                    var count : Int = 24
+                    while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 31){
+                        count += 1
+                    }
+                    if buttonArray[index! + count].image(for: UIControl.State.normal) == black{
+                        for i in 1 ... count{
+                            buttonArray[index! + i].setImage(black, for: UIControl.State.normal)
+                        }
+                    }
+                }
+                
                 
                 
                 turn += 1
