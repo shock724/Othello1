@@ -25,23 +25,74 @@ class ViewController: UIViewController {
         
         if sender.image(for: UIControl.State.normal) == nil{
             
+            //0=黒
             if turn == 0{
+                
+                //押下された場所に黒石を置く
                 sender.setImage(black, for: UIControl.State.normal)
-                if index! >= 0 && index! <= 6 && index! != 7 {
-                    var count : Int = 1
-                    while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 7){
-                        count += 1
+                //一行目押下時
+                if index! >= 1 && index! <= 6 && index! != 0 && index! != 7 {
+                    var rightCount : Int = 1
+                    var leftCount : Int = 1
+                    var underCount : Int = 8
+                    var rightDiagonalCount : Int = 9
+                    var leftDiagonalCount : Int = 7
+                    //押下箇所の右隣が白かつ一番右端でない場合カウントする
+                    while(buttonArray[index! + rightCount].image(for: UIControl.State.normal) == white && index! + rightCount != 7){
+                        rightCount += 1
                     }
                     
-                    if buttonArray[index! + count].image(for: UIControl.State.normal) == black{
-                        for i in 1 ... count{
+                    //押下箇所の左隣が白かつ一番左端でない場合カウントする
+                    while(buttonArray[index! - leftCount].image(for: UIControl.State.normal) == white && index! + leftCount != 0){
+                        leftCount += 1
+                    }
+                    
+                    //押下箇所の下隣が白かつ一番下端でない場合カウントする
+                    while(buttonArray[index! + underCount].image(for: UIControl.State.normal) == white && !(index! + underCount >= 57 && index! + underCount <= 62)){
+                        underCount += 8
+                    }
+                    
+                    //押下箇所の右下隣が白かつ一番右下端でない場合カウントする
+                    while(buttonArray[index! + rightDiagonalCount].image(for: UIControl.State.normal) == white && index! + rightDiagonalCount != stride(from: 7, to: 63, by: 8)){
+                        underCount += 8
+                    }
+                    
+                    //右端が黒だったら、押下された場所から右端の黒までの白石をひっくり返す
+                    if buttonArray[index! + rightCount].image(for: UIControl.State.normal) == black{
+                        for i in 1 ... rightCount{
                             buttonArray[index! + i].setImage(black, for: UIControl.State.normal)
                         }
                     }
+                    
+                    //左端が黒だったら、押下された場所から左端の黒までの白石をひっくり返す
+                    if buttonArray[index! - leftCount].image(for: UIControl.State.normal) == black{
+                        for j in 1 ... leftCount{
+                            buttonArray[index! - j].setImage(black, for: UIControl.State.normal)
+                        }
+                    }
+                    
+                    //下端が黒だったら、押下された場所から下端の黒までの白石をひっくり返す
+                    if buttonArray[index! + underCount].image(for: UIControl.State.normal) == black{
+                        for k in stride(from: 8, to: underCount, by: 8){
+                            buttonArray[index! + k].setImage(black, for: UIControl.State.normal)
+                        }
+                    }
+                    
+                    //下端が黒だったら、押下された場所から下端の黒までの白石をひっくり返す
+                    if buttonArray[index! + underCount].image(for: UIControl.State.normal) == black{
+                        for k in stride(from: 8, to: underCount, by: 8){
+                            buttonArray[index! + k].setImage(black, for: UIControl.State.normal)
+                        }
+                    }
+                    
+                    
                 }
                 
-                if index! >= 8 && index! <= 14 && index! != 15 {
-                    var count : Int = 8
+        
+                    
+                //二行目押下時
+                else if index! >= 8 && index! <= 14 && index! != 15 {
+                    var count : Int = 1
                     while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 15){
                         count += 1
                     }
@@ -51,9 +102,10 @@ class ViewController: UIViewController {
                         }
                     }
                 }
-                    
-                if index! >= 16 && index! <= 22 && index! != 23 {
-                    var count : Int = 16
+                  
+                //三行目押下時
+                else if index! >= 16 && index! <= 22 && index! != 23 {
+                    var count : Int = 1
                     while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 23){
                         count += 1
                     }
@@ -63,9 +115,10 @@ class ViewController: UIViewController {
                         }
                     }
                 }
-                
-                if index! >= 24 && index! <= 30 && index! != 31 {
-                    var count : Int = 24
+                    
+                //四行目押下時
+                else if index! >= 24 && index! <= 30 && index! != 31 {
+                    var count : Int = 1
                     while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 31){
                         count += 1
                     }
@@ -76,7 +129,57 @@ class ViewController: UIViewController {
                     }
                 }
                 
+                //五行目押下時
+                else if index! >= 32 && index! <= 38 && index! != 39 {
+                    var count : Int = 1
+                    while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 39){
+                        count += 1
+                    }
+                    if buttonArray[index! + count].image(for: UIControl.State.normal) == black{
+                        for i in 1 ... count{
+                            buttonArray[index! + i].setImage(black, for: UIControl.State.normal)
+                        }
+                    }
+                }
                 
+                //六行目押下時
+                else if index! >= 40 && index! <= 46 && index! != 47 {
+                    var count : Int = 1
+                    while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 47){
+                        count += 1
+                    }
+                    if buttonArray[index! + count].image(for: UIControl.State.normal) == black{
+                        for i in 1 ... count{
+                            buttonArray[index! + i].setImage(black, for: UIControl.State.normal)
+                        }
+                    }
+                }
+                
+                //七行目押下時
+                else if index! >= 48 && index! <= 54 && index! != 55 {
+                    var count : Int = 1
+                    while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 55){
+                        count += 1
+                    }
+                    if buttonArray[index! + count].image(for: UIControl.State.normal) == black{
+                        for i in 1 ... count{
+                            buttonArray[index! + i].setImage(black, for: UIControl.State.normal)
+                        }
+                    }
+                }
+                
+                //八行目押下時
+                else if index! >= 56 && index! <= 62 && index! != 63 {
+                    var count : Int = 1
+                    while(buttonArray[index! + count].image(for: UIControl.State.normal) == white && index! + count != 63){
+                        count += 1
+                    }
+                    if buttonArray[index! + count].image(for: UIControl.State.normal) == black{
+                        for i in 1 ... count{
+                            buttonArray[index! + i].setImage(black, for: UIControl.State.normal)
+                        }
+                    }
+                }
                 
                 turn += 1
             }
