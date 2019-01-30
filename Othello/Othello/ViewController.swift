@@ -53,8 +53,8 @@ class ViewController: UIViewController {
                     }
                     
                     //押下箇所の右下隣が白かつ一番右下端でない場合カウントする
-                    while(buttonArray[index! + rightDiagonalCount].image(for: UIControl.State.normal) == white && index! + rightDiagonalCount != stride(from: 7, to: 63, by: 8)){
-                        underCount += 8
+                    while(buttonArray[index! + rightDiagonalCount].image(for: UIControl.State.normal) == white && (index! + rightDiagonalCount) % 8 != 7){
+                        underCount += 9
                     }
                     
                     //右端が黒だったら、押下された場所から右端の黒までの白石をひっくり返す
@@ -78,12 +78,13 @@ class ViewController: UIViewController {
                         }
                     }
                     
-                    //下端が黒だったら、押下された場所から下端の黒までの白石をひっくり返す
-                    if buttonArray[index! + underCount].image(for: UIControl.State.normal) == black{
-                        for k in stride(from: 8, to: underCount, by: 8){
-                            buttonArray[index! + k].setImage(black, for: UIControl.State.normal)
+                    //右下端が黒だったら、押下された場所から右下端の黒までの白石をひっくり返す
+                    if buttonArray[index! + rightDiagonalCount].image(for: UIControl.State.normal) == black{
+                        for l in stride(from: 9, to: rightDiagonalCount, by: 9){
+                            buttonArray[index! + l].setImage(black, for: UIControl.State.normal)
                         }
                     }
+                    
                     
                     
                 }
