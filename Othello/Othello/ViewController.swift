@@ -36,8 +36,8 @@ class ViewController: UIViewController {
                     var leftCount : Int = 1
                     var underCount : Int = 8
                     var rightDiagonalCount : Int = 9
-                    var leftDiagonalCount : Int = 7
-                    //押下箇所の右隣が白かつ一番右端でない場合カウントする
+                    //var leftDiagonalCount : Int = 7
+                    //押下箇所の右隣が白かつ、押下された場所の右隣が一番右でない場合、左記の条件を満たすまでカウントする
                     while(buttonArray[index! + rightCount].image(for: UIControl.State.normal) == white && index! + rightCount != 7){
                         rightCount += 1
                     }
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
                     
                     //押下箇所の右下隣が白かつ一番右下端でない場合カウントする
                     while(buttonArray[index! + rightDiagonalCount].image(for: UIControl.State.normal) == white && (index! + rightDiagonalCount) % 8 != 7){
-                        underCount += 9
+                        rightDiagonalCount += 9
                     }
                     
                     //右端が黒だったら、押下された場所から右端の黒までの白石をひっくり返す
