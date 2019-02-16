@@ -70,7 +70,7 @@ class ViewController: UIViewController {
                 
                     //押下箇所の右下隣が白かつ、押下された場所の右下隣が一番右と一番下でない場合、下記の条件を満たすまでカウントする
                     if (index! + rightUnderDiagonalCount >= 0 && index! + rightUnderDiagonalCount <= 63) && !(48...63 ~= index!){
-                        while(buttonArray[index! + rightUnderDiagonalCount].image(for: UIControl.State.normal) == white) && (index! + rightUnderDiagonalCount) % 8 != 7{
+                        while(buttonArray[index! + rightUnderDiagonalCount].image(for: UIControl.State.normal) == white && (index! + rightUnderDiagonalCount) % 8 != 7){
 //                            if index! + rightUnderDiagonalCount >= 63{
 //                                rightUnderDiagonalCount += 9
 //                            }
