@@ -25,13 +25,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeW-bu-LD8">
-                                <rect key="frame" x="290" y="69" width="47" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="盤面.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Kz-Eu-DkZ">
                                 <rect key="frame" x="37" y="103" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -554,7 +547,6 @@
                     </view>
                     <connections>
                         <outlet property="label1" destination="e3E-I3-9yk" id="tWE-d9-J7s"/>
-                        <outlet property="label2" destination="WeW-bu-LD8" id="FRs-3i-2NM"/>
                         <outlet property="startBlack" destination="hSS-nL-Vgr" id="tJ0-A7-Gik"/>
                         <outlet property="startBlack2" destination="V1p-Kx-vwN" id="EFD-fa-Z42"/>
                         <outlet property="startWhite" destination="lWc-ec-X3L" id="2Ll-wz-NH5"/>

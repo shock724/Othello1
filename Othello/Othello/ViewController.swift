@@ -71,23 +71,30 @@ class ViewController: UIViewController {
                     //押下箇所の右下隣が白かつ、押下された場所の右下隣が一番右と一番下でない場合、下記の条件を満たすまでカウントする
                     if (index! + rightUnderDiagonalCount >= 0 && index! + rightUnderDiagonalCount <= 63) && !(48...63 ~= index!){
                         while(buttonArray[index! + rightUnderDiagonalCount].image(for: UIControl.State.normal) == white && (index! + rightUnderDiagonalCount) % 8 != 7){
-//                            if index! + rightUnderDiagonalCount >= 63{
-//                                rightUnderDiagonalCount += 9
-//                            }
+                            rightUnderDiagonalCount += 9
+                                if index! + rightUnderDiagonalCount >= 63{
+                                    break
+                                }
                         }
                     }
                     
                     //押下箇所の左下隣が白かつ、押下された場所の左下隣が一番左端でない場合、下記の条件を満たすまでカウントする
                     if (index! + leftUnderDiagonalCount >= 0 && index! + leftUnderDiagonalCount <= 63) && !(48...63 ~= index!){
-                        while(buttonArray[index! + leftUnderDiagonalCount].image(for: UIControl.State.normal) == white) && (index! + leftUnderDiagonalCount) % 8 != 0{
+                        while(buttonArray[index! + leftUnderDiagonalCount].image(for: UIControl.State.normal) == white && (index! + leftUnderDiagonalCount) % 8 != 0){
                             leftUnderDiagonalCount += 7
+                                if index! + leftUnderDiagonalCount >= 63{
+                                    break
+                                }
                         }
                     }
                 
                     //押下箇所の右上隣が白かつ、押下された場所の右上隣が一番右端でない場合、下記の条件を満たすまでカウントする
                     if index! - rightOverDiagonalCount >= 0 && index! - rightOverDiagonalCount <= 63 && !(0...14 ~= index!){
-                       while(buttonArray[index! - rightOverDiagonalCount].image(for: UIControl.State.normal) == white && ((index! - rightOverDiagonalCount) % 8 != 7) || (index! - rightOverDiagonalCount) ==   7){
+                       while(buttonArray[index! - rightOverDiagonalCount].image(for: UIControl.State.normal) == white && (index! - rightOverDiagonalCount) % 8 != 7){
                            rightOverDiagonalCount += 7
+                                if index! + rightOverDiagonalCount <= 0{
+                                    break
+                                }
                        }
                     }
                 
@@ -95,6 +102,10 @@ class ViewController: UIViewController {
                     if index! - leftOverDiagonalCount >= 0 && index! - leftOverDiagonalCount <= 63 && !(0...14 ~= index!){
                         while(buttonArray[index! - leftOverDiagonalCount].image(for: UIControl.State.normal) == white && (index! - leftOverDiagonalCount) % 8 != 0){
                             leftOverDiagonalCount += 9
+                                if index! + leftOverDiagonalCount <= 0{
+                                    break
+                                }
+
                         }
                     }
                 
@@ -244,6 +255,9 @@ class ViewController: UIViewController {
                     if (index! + rightUnderDiagonalCount >= 0 && index! + rightUnderDiagonalCount <= 63) && !(48...63 ~= index!){
                         while(buttonArray[index! + rightUnderDiagonalCount].image(for: UIControl.State.normal) == black && (index! + rightUnderDiagonalCount) % 8 != 7){
                             rightUnderDiagonalCount += 9
+                                if index! + rightUnderDiagonalCount >= 63{
+                                    break
+                                }
                         }
                     }
                         
@@ -251,6 +265,9 @@ class ViewController: UIViewController {
                     if (index! + leftUnderDiagonalCount >= 0 && index! + leftUnderDiagonalCount <= 63) && !(48...63 ~= index!){
                         while(buttonArray[index! + leftUnderDiagonalCount].image(for: UIControl.State.normal) == black && (index! + leftUnderDiagonalCount) % 8 != 0){
                             leftUnderDiagonalCount += 7
+                                if index! + leftUnderDiagonalCount >= 63{
+                                    break
+                                }
                         }
                     }
                 
@@ -258,6 +275,9 @@ class ViewController: UIViewController {
                     if (index! + rightOverDiagonalCount >= 0 && index! - rightOverDiagonalCount <= 63) && !(0...14 ~= index!){
                         while(buttonArray[index! - rightOverDiagonalCount].image(for: UIControl.State.normal) == black && (index! - rightOverDiagonalCount) % 8 != 7){
                             rightOverDiagonalCount += 7
+                                if index! + rightOverDiagonalCount <= 0{
+                                    break
+                                }
                         }
                     }
                 
@@ -265,6 +285,9 @@ class ViewController: UIViewController {
                     if (index! + leftOverDiagonalCount >= 0 && index! - leftOverDiagonalCount <= 63) && !(0...14 ~= index!){
                         while(buttonArray[index! - leftOverDiagonalCount].image(for: UIControl.State.normal) == black && (index! - leftOverDiagonalCount) % 8 != 7){
                             leftOverDiagonalCount += 9
+                                if index! - leftOverDiagonalCount <= 0{
+                                    break
+                                }
                         }
                     }
                 
@@ -368,7 +391,6 @@ class ViewController: UIViewController {
                 }
                 
             }
-            
         }
     }
 
@@ -378,9 +400,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         label1.text = "黒"
-        label2.text = "0"
         label1.layer.borderWidth = 1.0
-        label2.layer.borderWidth = 1.0
         startWhite.setImage(white, for: UIControl.State.normal)
         startWhite2.setImage(white, for: UIControl.State.normal)
         startBlack.setImage(black, for: UIControl.State.normal)
